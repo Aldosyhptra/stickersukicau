@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
 
 const Navbar = () => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
-  let lastScrollY = window.scrollY;
+  const lastScrollY = useRef(0);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,8 +15,8 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
-    setIsScrollingDown(currentScrollY > lastScrollY);
-    lastScrollY = currentScrollY;
+    setIsScrollingDown(currentScrollY > lastScrollY.current);
+    lastScrollY.current = currentScrollY;
   };
 
   useEffect(() => {
