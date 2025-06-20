@@ -35,9 +35,6 @@ const Navbar = () => {
 
         {/* Search Input */}
         <div className="hidden md:block w-1/3">
-            <label htmlFor="Search">
-            <span className="text-sm font-medium text-gray-700"> Search </span>
-
             <div className="relative">
                 <input
                 type="text"
@@ -69,7 +66,6 @@ const Navbar = () => {
                 </button>
                 </span>
             </div>
-            </label>
         </div>
 
         {/* Hamburger Button - only visible on small screens */}
@@ -133,9 +129,6 @@ const Navbar = () => {
             </ul>
             
             <div className="md:hidden block w-full">
-                <label htmlFor="Search">
-                <span className="text-sm font-medium text-gray-700"> Search </span>
-
                 <div className="relative">
                     <input
                     type="text"
@@ -167,7 +160,6 @@ const Navbar = () => {
                     </button>
                     </span>
                 </div>
-                </label>
             </div>
         </div>
       )}

@@ -1,13 +1,13 @@
 'use client';
 
 import Navbar from "../components/navbar";
-import CollectionCard from "../components/collection";
+import UploadCard from "../components/upload";
 
 export default function Collection() {
   return (
     <section className="w-full">
       <Navbar />
-      <CollectionCard />
+      <UploadCard />
     </section>
   );
 }
