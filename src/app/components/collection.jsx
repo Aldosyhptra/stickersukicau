@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { fetchAllData } from '../lib/api';
-import { saveAs } from 'file-saver'
 
 export default function CollectionCard() {
   const [data, setData] = useState([]);
@@ -16,7 +15,8 @@ export default function CollectionCard() {
   }, []);
 
     const handleDownload = (filename) => {
-    saveAs(filename, filename)
+      const downloadUrl = `http://192.168.1.10:8000/download/${filename}`;
+      window.open(downloadUrl, '_blank');
     };
 
   return (
