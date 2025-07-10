@@ -15,7 +15,7 @@ export default function CollectionCard() {
   }, []);
 
     const handleDownload = (filename) => {
-      const downloadUrl = `http://192.168.1.10:8000/download/${filename}`;
+      const downloadUrl = `https://stikersukicau-be-production.up.railway.app/download/${filename}`;
       window.open(downloadUrl, '_blank');
     };
 
@@ -28,7 +28,7 @@ export default function CollectionCard() {
                 className="group w-25 md:w-60 aspect-[3/4] relative bg-black rounded-xl overflow-hidden"
             >
                 <img
-                src={`http://192.168.1.10:8000/gambar/${item.gambar}`}
+                src={`https://stikersukicau-be-production.up.railway.app/gambar/${item.gambar}`}
                 alt={`${item.gambar}`}
                 className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-50"
                 />
