@@ -1,6 +1,6 @@
 export async function fetchAllData() {
   try {
-    const response = await fetch('https://stikersukicau-be-production.up.railway.app//api/read_all');
+    const response = await fetch('https://stikersukicau-be-production.up.railway.app/api/read_all');
     console.log('fetch terpanggil');
 
     if (!response.ok) {
@@ -27,7 +27,7 @@ export async function uploadGambar(file, kategori = '') {
   }
 
   try {
-    const response = await fetch('https://stikersukicau-be-production.up.railway.app//api/uploadgambar', {
+    const response = await fetch('https://stikersukicau-be-production.up.railway.app/api/uploadgambar', {
       method: 'POST',
       body: formData,
     });
