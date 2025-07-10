@@ -20,31 +20,35 @@ export default function CollectionCard() {
     };
 
   return (
-    <div className='collection py-30 px-5 flex flex-wrap justify-center gap-5'>
-        {data && data.length > 0 ? (
-            data.map((item, index) => (
-            <div
-                key={index}
-                className="group w-25 md:w-60 aspect-[3/4] relative bg-black rounded-xl overflow-hidden"
-            >
-                <img
-                src={`https://stikersukicau-be-production.up.railway.app/gambar/${item.gambar}`}
-                alt={`${item.gambar}`}
-                className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-50"
-                />
+  <div className="pt-25 columns-3 md:columns-5 lg:columns-7 gap-4 px-5 py-10">
+    {data && data.length > 0 ? (
+      data.map((item, index) => (
+        <div
+          key={index}
+          className="mb-4 break-inside-avoid group relative bg-black rounded-xl overflow-hidden"
+        >
+          <img
+            src={`https://stikersukicau-be-production.up.railway.app/gambar/${item.gambar}`}
+            alt={item.gambar}
+            className="w-full h-auto object-cover transition-opacity duration-300 group-hover:opacity-50"
+          />
 
-                <div className="absolute inset-0 flex items-end p-4">
-                    <div className="w-full transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 md:opacity-0 md:translate-y-4">
-                        <button   onClick={() => handleDownload(item.gambar)} className='bg-white/30 py-3 px-2 flex mx-auto border text-white text-xs md:text-base border-white rounded-lg cursor-pointer'>
-                        Download
-                        </button>
-                    </div>
-                </div>
+          <div className="absolute inset-0 flex items-end p-4">
+            <div className="w-full transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 md:opacity-0 md:translate-y-4">
+              <button
+                onClick={() => handleDownload(item.gambar)}
+                className="bg-white/30 py-2 px-3 flex mx-auto border text-white text-xs md:text-sm border-white rounded-lg cursor-pointer"
+              >
+                Download
+              </button>
             </div>
-            ))
-        ) : (
-            <p>Memuat data...</p>
-        )}
-    </div>
-  );
+          </div>
+        </div>
+      ))
+    ) : (
+      <p>Memuat data...</p>
+    )}
+  </div>
+);
+
 }
